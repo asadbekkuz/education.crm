@@ -81,7 +81,7 @@ class CourseController extends Controller
     public function sort()
     {
         if(isset($_POST['columnName']) && isset($_POST['sort']) && isset($_POST['page']))
-        {
+        {   
             $course = new Course();
             $limit = Component::LIMIT;
             $column = $_POST['columnName'];
@@ -121,6 +121,7 @@ class CourseController extends Controller
             $searchColumn = $_POST['search_column'];
             $searchValue = $_POST['search_value'];
             $course = new Course();
+
             $courses = $course->getByFilter($searchColumn,$searchValue);
 
             $this->render('index',[

@@ -119,18 +119,14 @@ abstract class Model
         return [];
     }
 
-    public function getByFilter($column,$value)
+    public function getByFilter($columnName,$value)
     {
-        $sql = "select * from {$this->tableName()} where :column like '%php%'";
+        $sql = "SELECT * FROM {$this->tableName()} WHERE ".$columnName." LIKE '%".$value."%'";
 //        $value = "'%$value%'";
         $stmt = $this->con->prepare($sql);
-        $stmt->bindValue(':column',$column);
+//        $stmt->bindValue(':columnName',$columnName);
 //        $stmt->bindValue(":value",$value);
         $stmt->execute();
-        echo "<pre>";
-            print_r($stmt->fetchAll(PDO::FETCH_ASSOC));
-        echo "</pre>";
-        exit();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }
