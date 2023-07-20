@@ -1,0 +1,18 @@
+{
+    "name": "asadbekkuz/mvc",
+    "type": "project",
+    "license": "MIT",
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "controllers\\":"controllers/",
+            "core\\": "core/",
+            "models\\": "models/",
+            "components\\": "components/"
+        }
+    },
+    "require": {
+      "ext-pdo": "*",
+        "vlucas/phpdotenv": "^5.5@dev"
+    }
+}
