@@ -186,8 +186,9 @@
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
                     <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                    <?php ?>
                     <?php for ($page = 1; $page <= $pageCount; $page++): ?>
-                        <li class="page-item">
+                        <li class="page-item active">
                             <a class="page-link" href="/index.php/course/index?page=<?= $page ?>">
                                 <?= $page ?>
                             </a>
@@ -241,7 +242,6 @@
                     }
                 })
             });
-
         })
     </script>
 <?php session_destroy(); ?>
